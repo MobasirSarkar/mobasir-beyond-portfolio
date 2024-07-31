@@ -2,7 +2,7 @@
 import { navLinks } from '@/lib/nav-links'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ModeToggle from '../providers/mode-toggle'
 import HamburgerIcon from './hamburger-icon'
 import { usePathname } from 'next/navigation'
@@ -15,10 +15,28 @@ export default function MobileNav() {
    const toggleOpen = () => {
       setIsOpen(prev => !prev)
    }
+   const [isSticky, setSticky] = useState<boolean>(false)
+
+   const handleScroll = () => {
+      if (window.scrollY > 0) {
+         setSticky(true)
+      } else {
+         setSticky(false)
+      }
+   }
+
+   useEffect(() => {
+      window.addEventListener('scroll', handleScroll)
+      return () => {
+         window.removeEventListener("scroll", handleScroll)
+      }
+   }, [])
+
 
    return (
       <nav
-         className={`lg:hidden border h-[4rem] w-[100%] md:flex flex justify-end `}
+         className={`lg:hidden border h-[4rem] w-[100%] md:flex flex justify-end transition-all 
+            duration-300 ease-in-out ${isSticky ? "fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bottom" : "relative"}`}
       >
          <span className='w-[14%] h-full flex items-center justify-center'>
             <ModeToggle />
