@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation'
 
 export default function MobileNav() {
    const activeLink = usePathname()
-   const [isOpen, setIsOpen] = useState(false)
+   const [isOpen, setIsOpen] = useState<boolean>(false)
 
    const toggleOpen = () => {
       setIsOpen(prev => !prev)
@@ -32,11 +32,15 @@ export default function MobileNav() {
       }
    }, [])
 
+   useEffect(() => {
+      setIsOpen(false)
+   }, [activeLink])
+
 
    return (
       <nav
-         className={`lg:hidden border h-[4rem] w-[100%] md:flex flex justify-end transition-all 
-            duration-300 ease-in-out ${isSticky ? "fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bottom" : "relative"}`}
+         className={`lg:hidden h-[4rem] w-[100%] md:flex flex justify-end transition-all 
+            duration-300 ease-in-out ${isSticky ? "fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bottom shadow" : "relative"}`}
       >
          <span className='w-[14%] h-full flex items-center justify-center'>
             <ModeToggle />

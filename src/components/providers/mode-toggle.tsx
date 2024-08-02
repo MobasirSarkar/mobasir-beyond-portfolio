@@ -17,7 +17,7 @@ export default function ModeToggle() {
       return null
    }
    const toggleTheme = () => {
-      setTheme(theme === 'dark' ? 'light' : 'dark')
+      setTheme(theme === 'light' ? 'dark' : 'light')
    }
    return (
       <AnimatePresence mode="wait" initial={false}>

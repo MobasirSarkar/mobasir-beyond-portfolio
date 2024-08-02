@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react'
 import MobileNav from './mobile-nav'
 import ModeToggle from '../providers/mode-toggle'
 import { navLinks } from '@/lib/nav-links'
+import Link from 'next/link'
+import { motion } from "framer-motion"
 
 export default function Nav() {
    const [isSticky, setSticky] = useState<boolean>(false)
-
+   const [selectedTab, setSelectedTab] = useState(navLinks[0])
    const handleScroll = () => {
       if (window.scrollY > 20) {
          setSticky(true)
@@ -30,10 +32,18 @@ export default function Nav() {
                <div className='flex gap-6'>
                   <span>Logo</span>
                   <ul className='flex gap-4'>
-                     {navLinks.map((navLink) => (
-                        <li key={navLink.path} className=''>{navLink.label}</li>
-                     ))
-                     }
+                     {navLinks.map((item) => (
+                        <li
+                           key={item.label}
+                           className={item === selectedTab ? "selected" : ""}
+                           onClick={() => setSelectedTab(item)}
+                        >
+                           <Link href={item.path}>{item.label}</Link>
+                           {item === selectedTab ? (
+                              <motion.div className="absolute h-[4px] w-full text-black" layoutId="underline" />
+                           ) : null}
+                        </li>
+                     ))}
                   </ul>
                </div>
                <div className=''>
