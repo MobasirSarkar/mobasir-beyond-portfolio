@@ -5,12 +5,12 @@ type Props = PropsWithChildren<{
    className?: string;
 }>;
 
-const MainWidthWrapper = ({ children, className }: Props) => {
+const MaxWidthWrapper = ({ children, className }: Props) => {
    return (
-      <main className={cn(`m-auto my-10 max-w-5xl space-y-10 px-3`, className)}>
+      <main className={cn(`m-auto max-w-7xl my-10 space-y-10 px-3`, className)}>
          {children}
       </main>
    );
 };
 
-export default MainWidthWrapper;
+export default MaxWidthWrapper;

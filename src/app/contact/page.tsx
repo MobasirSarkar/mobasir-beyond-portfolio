@@ -2,12 +2,7 @@ import React from 'react'
 
 export default function ContactPage() {
    return (
-      <div className='h-screen m-auto max-w-xl'>
-         <section className='flex justify-center items-center w-full h-full'>1</section>
-         <section className='flex justify-center items-center w-full h-full'>2</section>
-         <section className='flex justify-center items-center w-full h-full'>3</section>
-         <section className='flex justify-center items-center w-full h-full'>4</section>
-      </div>
+      <section>ContactPage</section>
    )
 }
 

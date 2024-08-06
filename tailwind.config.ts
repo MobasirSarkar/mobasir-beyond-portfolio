@@ -67,10 +67,17 @@ const config = {
                from: { height: "var(--radix-accordion-content-height)" },
                to: { height: "0" },
             },
+            "spinner": {
+               to: { transfrom: "rotate(360drg)" }
+            }
          },
          animation: {
             "accordion-down": "accordion-down 0.2s ease-out",
             "accordion-up": "accordion-up 0.2s ease-out",
+            "spinner": "spin 2s linear infinite"
+         },
+         transformOrigin: {
+            center: 'center'
          },
       },
    },

@@ -8,9 +8,10 @@ root,html,body{
 }
 
 
+
 @layer base {
   :root {
-    --background: 34.29 41.18% 90%;
+    --background: 0 0% 97.25%;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
@@ -38,7 +39,7 @@ root,html,body{
   }
 
   .dark {
-    --background: 240 4.48% 13.14%;
+    --background: 0 0% 5.88%;
     --foreground: 60 9.1% 97.8%;
     --card: 20 14.3% 4.1%;
     --card-foreground: 60 9.1% 97.8%;
@@ -76,6 +77,25 @@ root,html,body{
 @layer components {
    .shadow-bottom{
       box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+   }
+
+   .centerbox {
+      @apply flex justify-center items-center
+   }
+
+   .switch {
+      @apply w-[160px] h-[100px] flex justify-start rounded-[50px] p-[10px] cursor-pointer bg-[#FFFFFF66] border border-black items-center
+   }
+   .switch-on {
+      @apply justify-end
+   }
+
+   .handle {
+      @apply w-[80px] h-[80px] bg-white rounded-full border border-black 
+   }
+
+   .background {
+      @apply border border-gray-200 dark:border-gray-800/50
    }
 }
 

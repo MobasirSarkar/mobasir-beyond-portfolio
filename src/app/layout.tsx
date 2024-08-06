@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Nabla, Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import Nav from "@/components/nav/nav";
+import MaxWidthWrapper from "@/lib/main-width-wrapper";
+import Header from "@/components/pageComp/header";
+import { BackGround } from "@/components/ui/_animatedComp/background";
 
 const poppins = Poppins({ weight: ["400"], subsets: ["latin"] })
 
@@ -17,15 +19,21 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
+
       <html lang="en">
-         <body className={`${poppins.className} min-w-[320px]`}><ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            disableTransitionOnChange
-         >
-            <Nav />
-            {children}
-         </ThemeProvider></body>
+         <body className={`${poppins.className} overflow-x-hidden`}>
+            <ThemeProvider
+               attribute="class"
+               defaultTheme="light"
+               disableTransitionOnChange
+            >
+               <main className="container z-10 mx-auto relative">
+                  <Header />
+                  {children}
+               </main>
+               <BackGround />
+            </ThemeProvider>
+         </body>
       </html>
    );
 }
