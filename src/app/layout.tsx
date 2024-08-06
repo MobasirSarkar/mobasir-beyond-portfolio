@@ -27,8 +27,8 @@ export default function RootLayout({
                defaultTheme="light"
                disableTransitionOnChange
             >
+               <Header />
                <main className="container z-10 mx-auto relative">
-                  <Header />
                   {children}
                </main>
                <BackGround />
