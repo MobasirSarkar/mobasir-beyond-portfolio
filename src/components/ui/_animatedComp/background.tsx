@@ -18,20 +18,24 @@ export function BackGround() {
       hidden: { y: -100, opacity: 0 },
       visible: { y: 0, opacity: 1, transition: { duration: 0.5 } }
    }
+   const divNo = [1, 2, 3, 4]
    return (
       <AnimatePresence mode="wait">
-         <motion.div className="fixed inset-0 container mx-auto grid"
-            variants={containerVariant}
-            initial="hidden"
-            animate="visible"
+         <div className="fixed inset-0 container mx-auto grid"
          >
             <div className="relative grid grid-cols-2 lg:grid-cols-4">
-               <motion.div className="background" variants={itemVariants}></motion.div>
-               <motion.div className="background" variants={itemVariants}></motion.div>
-               <motion.div className="background" variants={itemVariants}></motion.div>
-               <motion.div className="background" variants={itemVariants}></motion.div>
+               {divNo.map((item) => (
+                  <motion.div
+                     key={item}
+                     className="background grid-item"
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.8, delay: item * 0.2 }}
+                  >
+                  </motion.div>
+               ))}
             </div>
-         </motion.div>
+         </div>
       </AnimatePresence>
    );
 }
