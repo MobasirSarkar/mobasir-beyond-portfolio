@@ -1,10 +1,10 @@
 import React from 'react'
-import Landing from './(landing)/page'
+import MainPage from './main/page'
 
 export default function Home() {
    return (
       <main className=''>
-         <Landing />
+         <MainPage />
       </main>
    )
 }
