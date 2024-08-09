@@ -76,62 +76,94 @@ body {
    body {
       @apply bg-background text-foreground;
    }
+
+   .main {
+      @apply w-screen h-screen
+   }
+
+
+   .loader {
+      height: calc(100vh + 200px);
+      width: 100%;
+      position: fixed;
+   }
+
+   .loader svg {
+      height: 100%;
+      width: 100%;
+   }
+
+   .loader svg path {
+      stroke: black;
+      stroke-width: 1px;
+   }
+
 }
 
 @layer components {
-   .shadow-bottom {
-      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+   .header {
+      position: fixed;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      padding: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+      mix-blend-mode: difference;
+      z-index: 1;
    }
 
-   .centerbox {
-      @apply flex justify-center items-center
+   .burger {
+      position: relative;
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      padding: 25px;
+      pointer-events: none;
+   }
+
+   .burger::before,
+   .burger::after {
+      display: block;
+      content: "";
+      width: 45px;
+      height: 5px;
+      mix-blend-mode: difference;
+      background-color: white;
+   }
+
+   .bounds {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: all;
+   }
+
+   .bounds:hover {
+      transform: scale(3);
+   }
+
+   .cursor {
+      position: fixed;
+      width: 15px;
+      height: 15px;
+      background-color: black;
+      border-radius: 50%;
+      pointer-events: none;
    }
 
    .switch {
-      @apply w-[160px] h-[100px] flex justify-start rounded-[50px] p-[10px] cursor-pointer bg-[#FFFFFF66] border border-black items-center
+      @apply w-[150px] h-[80px] bg-gray-100/60 flex justify-start rounded-full p-[10px] cursor-pointer items-center
    }
 
-   .switch-on {
+   .swtich-on {
       @apply justify-end
    }
 
    .handle {
-      @apply w-[80px] h-[80px] bg-white rounded-full border border-black
+      @apply w-[80px] h-[80px] bg-white rounded-full
    }
 
-   .background {
-      @apply border border-gray-200 dark:border-gray-800/50
-   }
-
-   @keyframes fadeIn {
-      0% {
-         opacity: 0;
-      }
-
-      100% {
-         opacity: 1;
-      }
-   }
-
-   @keyframes slideIn {
-      0% {
-         transform: translateX(-10px);
-      }
-
-      100% {
-         transform: translateX(0);
-      }
-   }
-
-   .grid-item::before {
-      content: before;
-      display: inline-block;
-      animation: fadeIn 1s ease-in-out;
-   }
-
-   .grid-item::after {
-      content: after;
-      display: inline-block;
-      animation: slideIn 1s ease-in-out;
-   }
 }

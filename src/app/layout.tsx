@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Nabla, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import MaxWidthWrapper from "@/lib/main-width-wrapper";
-import Header from "@/components/pageComp/header";
-import { BackGround } from "@/components/ui/_animatedComp/background";
+import LoaderWrapper from "@/components/ui/loaderwrapper";
+import Footer from "@/components/pageComp/footer";
 
 const poppins = Poppins({ weight: ["400"], subsets: ["latin"] })
 
@@ -24,14 +23,13 @@ export default function RootLayout({
          <body className={`${poppins.className} overflow-x-hidden`}>
             <ThemeProvider
                attribute="class"
-               defaultTheme="light"
+               defaultTheme="dark"
                disableTransitionOnChange
             >
-               <Header />
-               <main className="container z-10 mx-auto relative">
+               <LoaderWrapper>
                   {children}
-               </main>
-               <BackGround />
+                  <Footer />
+               </LoaderWrapper>
             </ThemeProvider>
          </body>
       </html>

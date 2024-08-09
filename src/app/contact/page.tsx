@@ -1,8 +1,12 @@
+import ModeToggle from '@/components/providers/mode-toggle'
 import React from 'react'
 
 export default function ContactPage() {
    return (
-      <section>ContactPage</section>
+      <div className='w-full h-full'>ContactPage
+         <ModeToggle />
+      </div>
+
    )
 }
 
