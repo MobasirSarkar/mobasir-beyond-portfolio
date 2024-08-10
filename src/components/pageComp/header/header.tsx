@@ -17,9 +17,9 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header({ 
          <nav className='w-[50%] h-full justify-start flex items-center p-10 text-2xl'>
          </nav>
          <nav className='w-[50%] h-full flex items-center justify-center'>
-            <div className='fixed flex w-[50%] justify-end lg:p-10 box-border cursor-pointer mix-blend-difference z-10'>
+            <div className='fixed flex w-[50%] justify-end lg:p-10 box-border cursor-pointer mix-blend-difference z-10 mr-14'>
                <MagneticArea>
-                  <div className='burger ' onClick={handleToggle}>
+                  <div className='burger' onClick={handleToggle}>
                      <div ref={containerRef} className='bounds'>
                      </div>
                   </div>

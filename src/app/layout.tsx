@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { IBM_Plex_Serif } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import LoaderWrapper from "@/components/ui/loaderwrapper";
 import Footer from "@/components/pageComp/footer";
 
 const poppins = Poppins({ weight: ["400"], subsets: ["latin"] })
+const ibmPelx = IBM_Plex_Serif({ weight: ["500"], style: ["italic"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
    title: "Create Next App",
@@ -20,7 +22,7 @@ export default function RootLayout({
    return (
 
       <html lang="en">
-         <body className={`${poppins.className} overflow-x-hidden`}>
+         <body className={`${ibmPelx.className} overflow-x-hidden`}>
             <ThemeProvider
                attribute="class"
                defaultTheme="dark"
@@ -28,7 +30,6 @@ export default function RootLayout({
             >
                <LoaderWrapper>
                   {children}
-                  <Footer />
                </LoaderWrapper>
             </ThemeProvider>
          </body>

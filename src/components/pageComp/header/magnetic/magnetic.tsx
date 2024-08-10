@@ -10,6 +10,7 @@ interface MagneticPositionProps {
 
 export default function MagneticArea({ children }: { children: React.ReactNode }) {
    const ref = useRef<HTMLDivElement>(null);
+
    const [position, setPosition] = useState<MagneticPositionProps>({ x: 0, y: 0 });
 
    const handleMouse = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

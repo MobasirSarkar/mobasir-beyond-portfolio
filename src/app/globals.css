@@ -126,8 +126,8 @@ body {
    .burger::after {
       display: block;
       content: "";
-      width: 45px;
-      height: 5px;
+      width: 30px;
+      height: 3px;
       mix-blend-mode: difference;
       background-color: white;
    }
@@ -164,6 +164,24 @@ body {
 
    .handle {
       @apply w-[80px] h-[80px] bg-white rounded-full
+   }
+
+   .typo-name {
+      font-size: clamp(4.313rem, 14.088vw + 0.667rem, 11.938rem);
+      line-height: clamp(6.469rem, 16.721vw + 2.142rem, 15.519rem);
+   }
+
+   .typo-name-content {
+      font-size: clamp(1rem, 0.115vw + 0.97rem, 1.063rem);
+      line-height: clamp(1.381rem, -0.219vw + 1.557rem, 1.5rem);
+   }
+
+   .verticalLine {
+      @apply relative overflow-hidden w-[3px] h-[3rem]
+   }
+
+   .lightLine {
+      @apply inline-block absolute bg-[#d3d3d3] w-full h-full
    }
 
 }
