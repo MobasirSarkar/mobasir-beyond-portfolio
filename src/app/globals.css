@@ -9,8 +9,6 @@ body {
    width: 100vw;
 }
 
-
-
 @layer base {
    :root {
       --background: 0 0% 97.25%;
@@ -129,7 +127,7 @@ body {
       width: 30px;
       height: 3px;
       mix-blend-mode: difference;
-      background-color: white;
+      background-color: black;
    }
 
    .bounds {
@@ -167,13 +165,13 @@ body {
    }
 
    .typo-name {
-      font-size: clamp(4.313rem, 14.088vw + 0.667rem, 11.938rem);
-      line-height: clamp(6.469rem, 16.721vw + 2.142rem, 15.519rem);
+      font-size: clamp(6.25rem, 17.241vw + 1.789rem, 23.125rem);
+      line-height: clamp(9.375rem, 21.137vw + 3.906rem, 30.063rem);
    }
 
-   .typo-name-content {
-      font-size: clamp(1rem, 0.115vw + 0.97rem, 1.063rem);
-      line-height: clamp(1.381rem, -0.219vw + 1.557rem, 1.5rem);
+   .typewritter-text {
+      font-size: clamp(2.813rem, 9.259vw + 0.417rem, 11.875rem);
+      line-height: clamp(4.219rem, 11.462vw + 1.253rem, 15.438rem);
    }
 
    .verticalLine {
@@ -182,6 +180,46 @@ body {
 
    .lightLine {
       @apply inline-block absolute bg-[#d3d3d3] w-full h-full
+   }
+
+   .gradient-text {
+      @apply bg-gradient-to-r from-indigo-500/90 via-purple-500/90 to-pink-500/90 text-transparent bg-clip-text
+   }
+
+   @keyframes gradient-move {
+      0% {
+         background-position: 0% 50%;
+      }
+
+      50% {
+         background-position: 100% 50%;
+      }
+
+      100% {
+         background-position: 0% 50%;
+      }
+   }
+
+   .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradient-move 5s ease infinite;
+   }
+
+   @keyframes gradient-reveal {
+      0% {
+         background-size: 200% 200%;
+         background-position: 100% 50%;
+      }
+
+      100% {
+         background-size: 100% 100%;
+         background-position: 0% 50%;
+      }
+   }
+
+   .animate-gradient-reveal {
+      background-size: 200% 200%;
+      animation: gradient-reveal 2s ease forwards;
    }
 
 }

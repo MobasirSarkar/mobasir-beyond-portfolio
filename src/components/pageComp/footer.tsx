@@ -2,7 +2,7 @@ import React from 'react'
 export default function Footer() {
    return (
       <div
-         className='relative h-[800px] bg-stone-700 z-20'
+         className='relative h-[800px] z-20 shadow-lg bg-black/10'
          style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
          <div className='relative h-[calc(100vh+800px)] -top-[100vh]'>

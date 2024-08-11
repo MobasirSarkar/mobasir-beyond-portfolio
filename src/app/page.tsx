@@ -9,11 +9,12 @@ import React, { useRef } from 'react'
 export default function Home() {
    const ref = useRef(null)
    return (
-      <main className="h-screen w-screen overflow-x-hidden">
+      <main className='z-10 w-screen h-screen overflow-x-hidden bg-indigo-700/45'>
          <Header containerRef={ref} />
          <Intro />
          <Progress />
          <StickyMouse stickyElement={ref} />
          <Footer />
-      </main>)
+      </main>
+   )
 }
