@@ -32,7 +32,7 @@ export function Intro() {
          <div ref={containerRef} className='flex uppercase lg:gap-4 w-full h-[45%] lg:mt-0 lg:p-1 mt-3 justify-center lg:flex-row flex-col'>
             <div className="flex justify-center gap-3 text-[11rem] lg:w-full h-[50%] lg:h-full">
                <div ref={addToRefs} className='lg:typo-name'>hi !</div>
-               <div ref={addToRefs} className='lg:typo-name'>i'm </div>
+               <div ref={addToRefs} className='lg:typo-name'>i&#39;m </div>
             </div>
             <div ref={addToRefs} className='lg:typo-name gradient-text animate-gradient text-[8.9rem] lg:w-full md:flex md:justify-center lg:ml-0'>
                <span>Mobasir</span>
