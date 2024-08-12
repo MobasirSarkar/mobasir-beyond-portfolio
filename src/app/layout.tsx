@@ -3,8 +3,9 @@ import "./globals.css";
 import { League_Gothic } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Background } from "@/components/ui/background";
-import { Suspense } from "react";
-import Loading from "./loading";
+
+
+
 const leGoFont = League_Gothic({ weight: ["400"], style: ["normal"], subsets: ["latin"] })
 
 export const metadata: Metadata = {

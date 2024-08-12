@@ -1,16 +1,14 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-
+import { Highlight } from "../ui/highlight-text";
+import { TextGenerateEffect } from "../ui/text-generator";
 const World = dynamic(() => import("./globeConfig").then((m) => m.World), {
    ssr: false,
 });
 
-export function GlobeDemo() {
+export function GlobeSection() {
    const globeConfig = {
       pointSize: 4,
-      globeColor: "#d3d3d3",
+      globeColor: "#F8F8F8",
       showAtmosphere: true,
       atmosphereColor: "#000000",
       atmosphereAltitude: 0.1,
@@ -28,7 +26,7 @@ export function GlobeDemo() {
       maxRings: 3,
       initialPosition: { lat: 22.3193, lng: 114.1694 },
       autoRotate: true,
-      autoRotateSpeed: 0.5,
+      autoRotateSpeed: 0.7,
    };
    const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
    const sampleArcs = [
@@ -393,17 +391,17 @@ export function GlobeDemo() {
          color: colors[Math.floor(Math.random() * (colors.length - 1))],
       },
    ];
-
+   const words = `from any place on the planet`
    return (
-      <div className="w-full h-full border border-black flex flex-col"
+      <div className="w-full h-full flex flex-col"
       >
-         <span className="w-full h-[10%] border border-red-500">
-            Lets Build Something Incredible Together
+         <span className="w-full h-[15%] flex items-end justify-center">
+            <Highlight className="hightlight-text uppercase rounded-sm">Let&#39;s create Something amazing Together</Highlight>
          </span>
-         <span className="w-full h-[10%] border border-blue-500">
-            From AnyWhere Around the World
+         <span className="w-full h-[15%] flex items-start justify-center">
+            <TextGenerateEffect words={words} className="uppercase hightlight-text" />
          </span>
-         <div className="w-full h-[80%] border border-green-500">
+         <div className="w-full h-[70%]">
             <div className="max-w-7xl mx-auto relative overflow-hidden h-full">
                <div className="absolute w-full h-[28rem] z-10 md:h-full cursor-pointer">
                   <World data={sampleArcs} globeConfig={globeConfig} />

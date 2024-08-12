@@ -1,23 +1,8 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React from "react";
+import { motion } from "framer-motion";
 
 export const ScrollDown: React.FC = () => {
-   const ballRef = useRef<SVGCircleElement>(null);
-
-   useEffect(() => {
-      if (ballRef.current) {
-         gsap.to(ballRef.current, {
-            y: -12,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-            duration: 1,
-            loop: true
-         });
-      }
-   }, []);
-
    return (
       <svg
          width="44px"
@@ -36,12 +21,20 @@ export const ScrollDown: React.FC = () => {
             stroke="black"
             strokeWidth="3"
          />
-         <circle
-            ref={ballRef}
+         <motion.circle
             cx="22"
             cy="48"
             r="5"
             fill="black"
+            animate={{
+               y: [-12, 8], // Move up and down
+            }}
+            transition={{
+               repeat: Infinity,
+               repeatType: "reverse",
+               ease: "easeInOut",
+               duration: 1,
+            }}
          />
       </svg>
    );

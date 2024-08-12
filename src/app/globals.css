@@ -222,4 +222,10 @@ body {
       animation: gradient-reveal 2s ease forwards;
    }
 
+   .hightlight-text {
+      font-size: clamp(1.625rem, 7.39vw + -0.287rem, 5.625rem);
+      line-height: clamp(2.113rem, 7.529vw + 0.164rem, 6.188rem);
+   }
+
+
 }

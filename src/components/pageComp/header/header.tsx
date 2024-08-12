@@ -1,13 +1,10 @@
 "use client"
-import React, { forwardRef, RefObject, useState } from 'react'
+import React from 'react'
 import MagneticArea from './magnetic/magnetic'
 import { HamburgerButton } from '@/components/ui/hamburger'
 
-interface HeaderProps {
-   containerRef: RefObject<HTMLDivElement>
-}
 
-export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header({ containerRef }) {
+export const Header = () => {
    return (
       <header className="h-[10%] flex w-full z-20 relative">
          <nav className='w-[50%] h-full justify-start flex items-center p-10 text-2xl'>
@@ -21,7 +18,7 @@ export const Header = forwardRef<HTMLDivElement, HeaderProps>(function Header({ 
          </nav>
       </header>
    )
-})
+}
 
 
 

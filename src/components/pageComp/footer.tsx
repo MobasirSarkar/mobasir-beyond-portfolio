@@ -18,7 +18,7 @@ export default function Footer() {
 const Content = () => {
    return (
       <div className='text-5xl flex items-center justify-center h-full'>
-         <div>footer</div>
+         <div>Under Development</div>
       </div>
    )
 }
