@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { League_Gothic } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import LoaderWrapper from "@/components/ui/loaderwrapper";
 import { Background } from "@/components/ui/background";
-
+import { Suspense } from "react";
+import Loading from "./loading";
 const leGoFont = League_Gothic({ weight: ["400"], style: ["normal"], subsets: ["latin"] })
 
 export const metadata: Metadata = {
@@ -26,10 +26,8 @@ export default function RootLayout({
                defaultTheme="light"
                disableTransitionOnChange
             >
-               <LoaderWrapper>
-                  <Background />
-                  {children}
-               </LoaderWrapper>
+               <Background />
+               {children}
             </ThemeProvider>
          </body>
       </html>

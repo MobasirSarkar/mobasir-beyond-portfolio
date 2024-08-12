@@ -2,19 +2,35 @@
 import { Intro } from '@/components/intro/intro'
 import Footer from '@/components/pageComp/footer'
 import { Header } from '@/components/pageComp/header/header'
-import StickyMouse from '@/components/pageComp/header/stickymouse/stickymouse'
 import { Progress } from '@/components/pageComp/Progress'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { BarLoader } from '@/components/ui/loader'
 
 export default function Home() {
-   const ref = useRef(null)
+   const [isLoaded, setIsLoaded] = useState<boolean>(false)
+   useEffect(() => {
+      const timer = setTimeout(() => {
+         setIsLoaded(true)
+      }, 2000)
+
+      return () => {
+         clearTimeout(timer)
+      }
+   }, [])
+   const ref = useRef<HTMLDivElement | null>(null)
    return (
       <main className='z-10 w-screen h-screen overflow-x-hidden bg-indigo-700/45'>
-         <Header containerRef={ref} />
-         <Intro />
-         <Progress />
-         <StickyMouse stickyElement={ref} />
-         <Footer />
+         {
+            !isLoaded ?
+               <BarLoader /> :
+               <>
+                  <Header containerRef={ref} />
+                  <Intro />
+                  <Progress />
+                  <Footer />
+               </>
+         }
       </main>
    )
 }
+
