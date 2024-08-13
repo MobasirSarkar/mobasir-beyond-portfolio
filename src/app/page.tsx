@@ -3,6 +3,7 @@ import { Intro } from '@/components/intro/intro'
 import Footer from '@/components/pageComp/footer'
 import { Header } from '@/components/pageComp/header/header'
 import { Progress } from '@/components/pageComp/Progress'
+import Project from '@/components/pageComp/Projects'
 import React from 'react'
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
          <Header />
          <Intro />
          <Progress />
+         <Project />
          <Footer />
       </main>
    )

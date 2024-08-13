@@ -19,7 +19,8 @@ export function Intro() {
    };
 
    return (
-      <div className='z-10 relative container h-full flex flex-col'
+      <section className='z-10 relative container h-full flex flex-col'
+         id='intro'
       >
          <div className='flex uppercase lg:gap-4 w-full h-[45%] lg:mt-0 lg:p-1 mt-3 justify-center lg:flex-row flex-col'>
             <div className="flex justify-center gap-3 text-[11rem] lg:w-full h-[50%] lg:h-full">
@@ -53,14 +54,14 @@ export function Intro() {
                animate={{ opacity: 1, scaleY: 1 }}
                transition={{ duration: 0.3, delay: 3, staggerChildren: 0.3 }}
                className='w-full h-[60%] lg:h-[50%] flex items-center flex-col gap-4'>
+               <div>Scroll Down</div>
                <div className=''>
+
                   <ScrollDown />
                </div>
-               <motion.div
-               >Scroll Down</motion.div>
             </motion.div>
          </div>
-      </div>
+      </section>
    )
 }
 
