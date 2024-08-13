@@ -23,7 +23,7 @@ export function Intro() {
          id='intro'
       >
          <div className='flex uppercase lg:gap-4 w-full h-[45%] lg:mt-0 lg:p-1 mt-3 justify-center lg:flex-row flex-col'>
-            <div className="flex justify-center gap-3 text-[11rem] lg:w-full h-[50%] lg:h-full">
+            <h1 className="flex justify-center gap-3 text-[11rem] lg:w-full h-[50%] lg:h-full">
                <motion.div
                   className='lg:typo-name'
                   initial="hidden"
@@ -35,17 +35,17 @@ export function Intro() {
                   animate="visible"
                   variants={textVariant}
                >i&#39;m </motion.div>
-            </div>
-            <motion.div
+            </h1>
+            <motion.h1
                className='lg:typo-name gradient-text animate-gradient text-[8.9rem] lg:w-full md:flex md:justify-center lg:ml-0'
                initial="hidden"
                animate="visible"
                variants={textVariant}
             >
                <span>Mobasir</span>
-            </motion.div>
+            </motion.h1>
          </div>
-         <div className='flex uppercase gap-3 lg:gap-8 w-full h-[55%] lg:mt-2 lg:p-3 items-center flex-col'>
+         <h2 className='flex uppercase gap-3 lg:gap-8 w-full h-[55%] lg:mt-2 lg:p-3 items-center flex-col'>
             <div className='w-full h-[40%] pl-3 lg:h-[50%] lg:pl-[7rem] lg:mb-4 lg:pb-10'>
                <TypewriterEffectSmooth words={typeText} />
             </div>
@@ -60,7 +60,7 @@ export function Intro() {
                   <ScrollDown />
                </div>
             </motion.div>
-         </div>
+         </h2>
       </section>
    )
 }

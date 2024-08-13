@@ -395,15 +395,15 @@ export function GlobeSection() {
    return (
       <div className="w-full h-full flex flex-col"
       >
-         <span className="w-full h-[15%] flex items-end justify-center">
+         <h1 className="w-full h-[15%] flex items-end justify-center">
             <Highlight className="hightlight-text uppercase rounded-sm">Let&#39;s create Something amazing Together</Highlight>
-         </span>
-         <span className="w-full h-[15%] flex items-start justify-center">
+         </h1>
+         <h2 className="w-full h-[15%] flex items-start justify-center">
             <TextGenerateEffect words={words} className="uppercase hightlight-text" />
-         </span>
+         </h2>
          <div className="w-full h-[70%]">
             <div className="max-w-7xl mx-auto relative overflow-hidden h-full">
-               <div className="absolute w-full h-[28rem] z-10 md:h-full cursor-pointer">
+               <div className="absolute w-full h-[25rem] z-10 md:h-full cursor-pointer">
                   <World data={sampleArcs} globeConfig={globeConfig} />
                </div>
             </div>
